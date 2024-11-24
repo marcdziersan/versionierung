@@ -51,3 +51,12 @@ Version 1.0.0 RC -> 1.0.0 Release:
 - Alle Funktionen sind stabil und vollständig implementiert.
 - Endgültige Version mit allen geplanten Features und vollständiger Fehlerbehandlung.
 - Die Software ist jetzt für den allgemeinen Einsatz bereit.
+
+Version 1.1.0 -> 2.0.0:
+- **Breaking Change**: Die Funktionen zur Benutzerbegrüßung und zeitabhängigen Begrüßung wurden in eine neue **User-Klasse** integriert.
+- Einführung der **User-Klasse**, die Benutzerdaten speichert und Methoden zur Begrüßung basierend auf der Sprache und der Tageszeit bereitstellt.
+    - `greet()`: Begrüßung des Benutzers basierend auf der bevorzugten Sprache.
+    - `timeBasedGreeting()`: Zeitabhängige Begrüßung (Morgen, Nachmittag, Abend).
+- Die bisherigen Funktionen "greet()" und "timeBasedGreeting()" wurden entfernt und durch Methoden der neuen User-Klasse ersetzt.
+- **Kompatibilitätsänderung**: Da die API jetzt die `User`-Klasse benötigt, ist die Version **2.0.0** nicht rückwärtskompatibel mit der **1.x.x**-Version.
+- Verbesserte Versionierungsstruktur und API-Änderungen zur Optimierung der Codewartung.
