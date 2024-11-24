@@ -1,12 +1,18 @@
 <?php
-// Version 0.0.1
-define('VERSION', '0.0.1');
+// Version 0.0.2
+define('VERSION', '0.0.2');
 
-// Funktion: Gibt eine einfache Begrüßung aus.
+// Funktion: Standardbegrüßung
 function greet() {
     return "Hello, World!";
 }
 
+// Neue Funktion: Personalisierte Begrüßung
+function greetUser($name) {
+    return "Hello, $name!";
+}
+
 // Beispielnutzung
 echo greet(); // Ausgabe: Hello, World!
+echo greetUser("Alice"); // Ausgabe: Hello, Alice!
 ?>
