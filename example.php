@@ -1,6 +1,6 @@
 <?php
-// Version 0.2.0
-define('VERSION', '0.2.0');
+// Version 0.3.0
+define('VERSION', '0.3.0');
 
 // Funktion: Standardbegrüßung
 function greet() {
@@ -34,7 +34,7 @@ function combinedGreeting($name) {
     return "$timeGreeting $personalGreeting";
 }
 
-// Neue Funktion: Benutzeranpassung mit alter und ortsbasierter Begrüßung
+// Benutzeranpassung
 function userCustomizedGreeting($name, $age, $location) {
     if ($age < 18) {
         $ageMessage = "You're still a young one!";
@@ -45,10 +45,17 @@ function userCustomizedGreeting($name, $age, $location) {
     return combinedGreeting($name) . " $ageMessage. You are in $location.";
 }
 
+// Neue Funktion: Kalenderwoche ermitteln
+function getCurrentWeek() {
+    $currentDate = new DateTime();
+    return $currentDate->format("W");
+}
+
 // Beispielnutzung
 echo greet(); // Ausgabe: Hello, World!
 echo greetUser("Alice"); // Ausgabe: Hello, Alice!
 echo timeBasedGreeting(); // Ausgabe: Good morning! (abhängig von der Uhrzeit)
 echo combinedGreeting("Alice"); // Ausgabe: Good morning! Hello, Alice! (abhängig von der Uhrzeit)
 echo userCustomizedGreeting("Alice", 25, "Berlin"); // Ausgabe: Good morning! Hello, Alice! You're an adult now! You are in Berlin.
+echo "Current Week: " . getCurrentWeek(); // Ausgabe: Current Week: 48 (abhängig vom aktuellen Datum)
 ?>
