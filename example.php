@@ -1,6 +1,6 @@
 <?php
-// Version 0.4.0
-define('VERSION', '0.4.0');
+// Version 1.0.0-alpha
+define('VERSION', '1.0.0-alpha');
 
 // Funktion: Standardbegrüßung
 function greet() {
@@ -63,7 +63,7 @@ function getTimeOfDay() {
     }
 }
 
-// Beispielnutzung
+// Einfache Tests für die Alpha-Version
 echo greet(); // Ausgabe: Hello, World!
 echo greetUser("Alice"); // Ausgabe: Hello, Alice!
 echo timeBasedGreeting(); // Ausgabe: Good morning! (abhängig von der Uhrzeit)
