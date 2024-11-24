@@ -1,6 +1,6 @@
 <?php
-// Version 1.0.0-alpha
-define('VERSION', '1.0.0-alpha');
+// Version 1.0.0-beta
+define('VERSION', '1.0.0-beta');
 
 // Funktion: Standardbegrüßung
 function greet() {
@@ -63,7 +63,23 @@ function getTimeOfDay() {
     }
 }
 
-// Einfache Tests für die Alpha-Version
+// Neue Funktion: Benutzerumfrage (Feedback sammeln)
+function collectUserFeedback($feedback) {
+    // Diese Funktion speichert Feedback (z. B. in einer Datenbank oder Datei)
+    // Hier simulieren wir das Feedback nur mit einer Ausgabe
+    echo "Feedback received: $feedback\n";
+}
+
+// Erweiterung: Sprachunterstützung (z. B. Englisch und Deutsch)
+function greetInLanguage($name, $language = 'en') {
+    if ($language == 'de') {
+        return "Hallo, $name!";
+    } else {
+        return "Hello, $name!";
+    }
+}
+
+// Beispielnutzung
 echo greet(); // Ausgabe: Hello, World!
 echo greetUser("Alice"); // Ausgabe: Hello, Alice!
 echo timeBasedGreeting(); // Ausgabe: Good morning! (abhängig von der Uhrzeit)
@@ -71,4 +87,6 @@ echo combinedGreeting("Alice"); // Ausgabe: Good morning! Hello, Alice! (abhäng
 echo userCustomizedGreeting("Alice", 25, "Berlin"); // Ausgabe: Good morning! Hello, Alice! You're an adult now! You are in Berlin.
 echo "Current Week: " . getCurrentWeek(); // Ausgabe: Current Week: 48 (abhängig vom aktuellen Datum)
 echo "Time of Day: " . getTimeOfDay(); // Ausgabe: Time of Day: morning/afternoon/evening
+collectUserFeedback("This feature works great!"); // Ausgabe: Feedback received: This feature works great!
+echo greetInLanguage("Alice", 'de'); // Ausgabe: Hallo, Alice!
 ?>
