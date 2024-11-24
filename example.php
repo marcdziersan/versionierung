@@ -1,6 +1,6 @@
 <?php
-// Version 1.0.0-beta
-define('VERSION', '1.0.0-beta');
+// Version 1.0.0 RC
+define('VERSION', '1.0.0-RC');
 
 // Funktion: Standardbegrüßung
 function greet() {
@@ -63,20 +63,29 @@ function getTimeOfDay() {
     }
 }
 
-// Neue Funktion: Benutzerumfrage (Feedback sammeln)
+// Benutzerumfrage (Feedback sammeln)
 function collectUserFeedback($feedback) {
-    // Diese Funktion speichert Feedback (z. B. in einer Datenbank oder Datei)
-    // Hier simulieren wir das Feedback nur mit einer Ausgabe
+    // Diese Funktion simuliert das Speichern von Feedback, z.B. in einer Datenbank oder Datei
     echo "Feedback received: $feedback\n";
 }
 
-// Erweiterung: Sprachunterstützung (z. B. Englisch und Deutsch)
+// Sprachunterstützung: Begrüßung in mehreren Sprachen
 function greetInLanguage($name, $language = 'en') {
     if ($language == 'de') {
         return "Hallo, $name!";
+    } elseif ($language == 'fr') {
+        return "Bonjour, $name!";
     } else {
         return "Hello, $name!";
     }
+}
+
+// Verbesserte Fehlerbehandlung: Fehlernachricht und Logging
+function handleError($errorMessage) {
+    // Hier könnten wir Fehler protokollieren und eine benutzerfreundliche Nachricht ausgeben
+    echo "Error: $errorMessage\n";
+    // Optionale Fehlerprotokollierung in eine Datei oder Datenbank
+    // file_put_contents('error_log.txt', $errorMessage . "\n", FILE_APPEND);
 }
 
 // Beispielnutzung
@@ -89,4 +98,6 @@ echo "Current Week: " . getCurrentWeek(); // Ausgabe: Current Week: 48 (abhängi
 echo "Time of Day: " . getTimeOfDay(); // Ausgabe: Time of Day: morning/afternoon/evening
 collectUserFeedback("This feature works great!"); // Ausgabe: Feedback received: This feature works great!
 echo greetInLanguage("Alice", 'de'); // Ausgabe: Hallo, Alice!
+echo greetInLanguage("Alice", 'fr'); // Ausgabe: Bonjour, Alice!
+handleError("This is a test error message."); // Ausgabe: Error: This is a test error message.
 ?>
