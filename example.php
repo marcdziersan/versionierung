@@ -1,6 +1,6 @@
 <?php
-// Version 1.0.0 RC
-define('VERSION', '1.0.0-RC');
+// Version 1.0.0 Release
+define('VERSION', '1.0.0');
 
 // Funktion: Standardbegrüßung
 function greet() {
@@ -88,6 +88,11 @@ function handleError($errorMessage) {
     // file_put_contents('error_log.txt', $errorMessage . "\n", FILE_APPEND);
 }
 
+// Version Check
+function displayVersion() {
+    echo "Current version: " . VERSION . "\n";
+}
+
 // Beispielnutzung
 echo greet(); // Ausgabe: Hello, World!
 echo greetUser("Alice"); // Ausgabe: Hello, Alice!
@@ -100,4 +105,5 @@ collectUserFeedback("This feature works great!"); // Ausgabe: Feedback received:
 echo greetInLanguage("Alice", 'de'); // Ausgabe: Hallo, Alice!
 echo greetInLanguage("Alice", 'fr'); // Ausgabe: Bonjour, Alice!
 handleError("This is a test error message."); // Ausgabe: Error: This is a test error message.
+displayVersion(); // Ausgabe: Current version: 1.0.0
 ?>
