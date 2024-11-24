@@ -1,6 +1,6 @@
 <?php
-// Version 0.0.4
-define('VERSION', '0.0.4');
+// Version 0.1.0
+define('VERSION', '0.1.0');
 
 // Funktion: Standardbegrüßung
 function greet() {
@@ -15,7 +15,7 @@ function greetUser($name) {
     return "Hello, $name!";
 }
 
-// Neue Funktion: Begrüßung basierend auf der Tageszeit
+// Zeitbasierte Begrüßung
 function timeBasedGreeting() {
     $hour = date("H");
     if ($hour < 12) {
@@ -27,8 +27,16 @@ function timeBasedGreeting() {
     }
 }
 
+// Kombinierte Begrüßung: Zeitbasiert + Personalisierung
+function combinedGreeting($name) {
+    $timeGreeting = timeBasedGreeting();
+    $personalGreeting = greetUser($name);
+    return "$timeGreeting $personalGreeting";
+}
+
 // Beispielnutzung
 echo greet(); // Ausgabe: Hello, World!
 echo greetUser("Alice"); // Ausgabe: Hello, Alice!
 echo timeBasedGreeting(); // Ausgabe: Good morning! (abhängig von der Uhrzeit)
+echo combinedGreeting("Alice"); // Ausgabe: Good morning! Hello, Alice! (abhängig von der Uhrzeit)
 ?>
